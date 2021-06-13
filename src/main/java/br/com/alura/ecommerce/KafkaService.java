@@ -20,7 +20,7 @@ public class KafkaService implements AutoCloseable {
     }
 
     public void run() {
-        while(true) {
+        while (true) {
             var records = consumer.poll(Duration.ofMillis(100));
             if (!records.isEmpty()) {
                 System.out.println("Found " + records.count() + " registers");
